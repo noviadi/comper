@@ -1,0 +1,109 @@
+# C++ artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# JavaScript/Node artifacts
+node_modules/
+coverage/
+.nyc_output/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.lock-wscript
+.yarn-integrity
+.node_repl_history
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.env
+.env.test
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.tsbuildinfo
+.eslintcache
+.npm
+.DS_Store
+
+# IDE/Editor specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+# Ignore any test binaries that might be created in problems directory
+problems/**/*.exe
+problems/**/*.out
+problems/**/__pycache__/
+problems/**/*.pyc
+
+# Examples directory artifacts
+examples/**/*.exe
+examples/**/*.out
+examples/**/__pycache__/
+examples/**/*.pyc
+
+# Local development environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Additional project specific files
+solution_test
+test_output/
+temp/
+tmp/

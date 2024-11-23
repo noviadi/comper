@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Function to display usage information
+show_help() {
+    cat << EOF
+Usage: comper <command> <problem_name> [language]
+
+Commands:
+  create         Create a new problem
+  run           Run tests for a problem
+  help          Show this help message
+
+Arguments:
+  problem_name   Name of the problem (e.g., two_sum, binary_search)
+  language      Optional: Specific language to target (cpp, python, js)
+
+Languages:
+  cpp           C++
+  python        Python
+  js            JavaScript
+
+Examples:
+  comper create two_sum           # Create in all languages
+  comper create two_sum cpp       # Create in C++ only
+  comper run two_sum             # Run all languages
+  comper run two_sum python      # Run Python only
+
+For more information and examples, visit:
+  https://github.com/yourusername/comper#readme
+EOF
+    exit 1
+}
+
+# Display help if requested or if no arguments provided
+if [ $# -lt 1 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "help" ]; then
+    show_help
+fi
+
+COMMAND=$1
+PROBLEM_NAME=$2
+LANGUAGE=$3
+
+# Validate command
+case $COMMAND in
+    "create"|"run")
+        # Valid command, continue
+        ;;
+    *)
+        echo "Error: Invalid command '$COMMAND'"
+        echo "Run 'comper help' for usage information"
+        exit 1
+        ;;
+esac
+
+# Validate problem name is provided
+if [ -z "$PROBLEM_NAME" ]; then
+    echo "Error: Problem name is required"
+    echo "Run 'comper help' for usage information"
+    exit 1
+fi
+
+# Validate language if provided
+if [ ! -z "$LANGUAGE" ]; then
+    case $LANGUAGE in
+        "cpp"|"python"|"js")
+            # Valid language, continue
+            ;;
+        *)
+            echo "Error: Invalid language '$LANGUAGE'"
+            echo "Supported languages: cpp, python, js"
+            echo "Run 'comper help' for usage information"
+            exit 1
+            ;;
+    esac
+fi
+
+# Execute the appropriate script based on command
+case $COMMAND in
+    "create")
+        ./scripts/create.sh "$PROBLEM_NAME" "$LANGUAGE"
+        ;;
+    "run")
+        ./scripts/run.sh "$PROBLEM_NAME" "$LANGUAGE"
+        ;;
+esac

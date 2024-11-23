@@ -1,0 +1,19 @@
+{
+  "name": "comper",
+  "version": "1.0.0",
+  "description": "Competitive Programming Runner - A tool for managing coding problems across multiple languages",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "competitive-programming",
+    "algorithms",
+    "data-structures",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^10.2.0"
+  }
+}
