@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Export all functions for use in child scripts
+set -a
+
 # Detect OS by checking for PowerShell
 detect_os() {
     if command -v powershell.exe >/dev/null 2>&1; then
@@ -21,3 +24,17 @@ run_os_command() {
         eval "$unix_cmd"
     fi
 }
+
+# Get version from package.json
+get_version() {
+    local project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+    if command -v node >/dev/null 2>&1; then
+        echo $(node -p "require('$project_root/package.json').version")
+    else
+        # Fallback using grep and sed if node is not available
+        grep '"version":' "$project_root/package.json" | sed 's/.*: "\(.*\)".*/\1/'
+    fi
+}
+
+# Restore default behavior
+set +a

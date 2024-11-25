@@ -3,9 +3,6 @@
 # Get the absolute path of the project directory
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Source utility functions
-source "$PROJECT_DIR/scripts/utils.sh"
-
 # Check if problem name is provided
 if [ $# -lt 1 ]; then
     echo "Error: Problem name is required"
