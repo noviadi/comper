@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
-A command-line tool for managing competitive programming and coding interview problems across multiple languages (C++, Python, JavaScript).
+A cool command-line tool for managing competitive programming and coding interview problems across multiple languages (C++, Python, JavaScript).
 
 ## Features
 - Create problem templates for C++, Python, and JavaScript
